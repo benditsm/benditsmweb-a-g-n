@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Force Node 24 now
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Node 24 for actions
 
     steps:
       - name: Checkout repository
@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 24 # Update to Node.js 24
+          node-version: 24 # update to Node.js 24
 
       - name: Install dependencies
         run: npm install
@@ -30,4 +30,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist # Astro output folder
+          commit_user_name: "benditsm" # Git identity
+          commit_user_email: "ross@benditsm.com"
+          force_orphan: true # <-- HERE: creates gh-pages if missing
