@@ -29,7 +29,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.VS-Code-Git }}
           publish_dir: ./dist # Astro output folder
           commit_user_name: "benditsm" # Git identity
           commit_user_email: "ross@benditsm.com"
