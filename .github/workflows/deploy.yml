@@ -3,11 +3,13 @@ name: Deploy Astro Site to GitHub Pages
 on:
   push:
     branches:
-      - main # or your default branch
+      - main # your default branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Force Node 24 now
 
     steps:
       - name: Checkout repository
@@ -16,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20 # match your Node version
+          node-version: 24 # Update to Node.js 24
 
       - name: Install dependencies
         run: npm install
