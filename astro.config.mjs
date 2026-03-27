@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  base: './', //relative path for github pages
+  base: 'https://benditsm.github.io/benditsmweb-a-g-n/', //absolute path for github pages
   vite: {
     plugins: [tailwindcss()]
   },
