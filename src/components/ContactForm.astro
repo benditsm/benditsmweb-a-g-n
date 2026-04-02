@@ -1,22 +1,90 @@
 ---
-const portalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID;
-const formId = import.meta.env.PUBLIC_HUBSPOT_FORM_ID;
-const scriptSrc = `https://js-na2.hsforms.net/forms/embed/${portalId}.js`;
+// HubSpot Contact Form - Contact section
 ---
 
-<div
-  class="hs-form-frame"
-  data-region="na2"
-  data-form-id={formId}
-  data-portal-id={portalId}
->
-  <p class="hs-form-fallback">
-    Having trouble seeing this form?
-    <a href="mailto:contact@benditsm.com">Contact us directly via email</a>.
-  </p>
-</div>
+<section id="contact" class="py-20 bg-blue-600 text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+      <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+        Ready to transform your IT infrastructure? Let's talk about your needs.
+      </p>
+    </div>
 
-<script is:inline defer src={scriptSrc}></script>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+              ></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+              ></path>
+            </svg>
+            <div>
+              <p class="font-semibold">Email</p>
+              <p class="text-blue-100">contact@benditsm.com</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <p class="font-semibold">Location</p>
+              <p class="text-blue-100">Bend, Oregon</p>
+              <p class="text-blue-100 text-sm">Serving businesses nationwide</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <p class="font-semibold">Business Hours</p>
+              <p class="text-blue-100">Monday - Friday: 8:00 AM - 4:00 PM</p>
+              <p class="text-blue-100 text-sm">
+                Saturday - Sunday: Emergency Support Available
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HubSpot Contact Form -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <div
+          class="hs-form-frame"
+          data-region="na2"
+          data-form-id="e821a1cf-30df-43d3-b7b7-5f19132dae4e"
+          data-portal-id="245762049"
+        >
+          <p class="text-gray-500 text-sm">
+            Having trouble seeing this form?
+            <a
+              href="mailto:contact@benditsm.com"
+              class="text-blue-600 underline">Email us directly</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  is:inline
+  defer
+  src="https://js-na2.hsforms.net/forms/embed/245762049.js"></script>
 
 <style>
   .hs-form-frame:has(iframe) .hs-form-fallback {
