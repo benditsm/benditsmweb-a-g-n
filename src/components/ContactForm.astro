@@ -2,13 +2,28 @@
 // HubSpot Form Embed Code
 ---
 
+--- const portalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID; const formId =
+import.meta.env.PUBLIC_HUBSPOT_FORM_ID; ---
+
 <div
   class="hs-form-frame"
   data-region="na2"
-  data-form-id="e821a1cf-30df-43d3-b7b7-5f19132dae4e"
-  data-portal-id="245762049"
+  data-form-id={formId}
+  data-portal-id={portalId}
 >
+  <p class="hs-form-fallback">
+    Having trouble seeing this form?
+    <a href="mailto:contact@benditsmcom">Contact us directly via email</a>.
+  </p>
 </div>
 
-<script src="https://js-na2.hsforms.net/forms/embed/245762049.js" is:load
-></script>
+<script
+  is:inline
+  defer
+  src=`https://js-na2.hsforms.net/forms/embed/${portalId}.js`></script>
+
+<style>
+  .hs-form-frame:has(iframe) .hs-form-fallback {
+    display: none;
+  }
+</style>
