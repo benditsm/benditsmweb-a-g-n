@@ -1,9 +1,8 @@
 ---
-// HubSpot Form Embed Code
+const portalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID;
+const formId = import.meta.env.PUBLIC_HUBSPOT_FORM_ID;
+const scriptSrc = `https://js-na2.hsforms.net/forms/embed/${portalId}.js`;
 ---
-
---- const portalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID; const formId =
-import.meta.env.PUBLIC_HUBSPOT_FORM_ID; ---
 
 <div
   class="hs-form-frame"
@@ -13,14 +12,11 @@ import.meta.env.PUBLIC_HUBSPOT_FORM_ID; ---
 >
   <p class="hs-form-fallback">
     Having trouble seeing this form?
-    <a href="mailto:contact@benditsmcom">Contact us directly via email</a>.
+    <a href="mailto:contact@benditsm.com">Contact us directly via email</a>.
   </p>
 </div>
 
-<script
-  is:inline
-  defer
-  src=`https://js-na2.hsforms.net/forms/embed/${portalId}.js`></script>
+<script is:inline defer src={scriptSrc}></script>
 
 <style>
   .hs-form-frame:has(iframe) .hs-form-fallback {
